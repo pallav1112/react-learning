@@ -1,15 +1,17 @@
-import './App.css'
-import Gallery from './gallery'
-import Profile from './profile'
-import ToDoList from './todoList'
+import './App.css';
+import TestProfile from './childrenPropChallenge';
+import PackingList from './conditionalRendering';
+import Gallery from './gallery';
+import Profile from './profile';
+import List from './renderingList';
+import ToDoList from './todoList';
 
 function App() {
- 
   return (
     <>
-      <Gallery />
-    </> 
-  )
+      <List />
+    </>
+  );
 }
 
-export default App
+export default App;
