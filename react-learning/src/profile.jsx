@@ -1,29 +1,33 @@
-import Avatar from "./avatar";
+import Avatar from './avatar';
 
-export default function Profile() {
+function ProfileDetails({ details }) {
   return (
-   <>
-    <Avatar 
-        size={100}
-        person={{
-          name: 'Katsuko Saruhashi', 
-          imageId: 'YfeOqp2'
-        }}
-    />
-    <Avatar
-        size={80}
-        person={{
-          name: 'Aklilu Lemma', 
-          imageId: 'OKS67lh'
-        }}
-    />
-    <Avatar
-        size={50}
-        person={{ 
-          name: 'Lin Lanying',
-          imageId: '1bX5QH6'
-        }}
-    />
-   </> 
+    <>
+      <ul>
+        <li>
+          <b>Profession: </b>
+          {details.profession}
+        </li>
+        <li>
+          <b>Awards: {details.awards.count} </b>({details.awards.details})
+        </li>
+        <li>
+          <b>Discovered: </b>
+          {details.discovered}
+        </li>
+      </ul>
+    </>
+  );
+}
+
+export default function Profile({ person, size, details }) {
+  return (
+    <>
+      <section className="profile">
+        <h2>{person.name}</h2>
+        <Avatar person={person} size={size} />
+        <ProfileDetails details={details} />
+      </section>
+    </>
   );
 }
